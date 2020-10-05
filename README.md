@@ -97,8 +97,9 @@ The code is developed using python 3.6 on Centos7. NVIDIA GPUs are needed. The c
                 |-- pose_resnet_152_256x256.pth
                 `-- pose_resnet_50_256x256.pth
    ```
-For  APRCP HRNet you can get our prtrain model in :
-for a purned model, there are two main file:
+For  APRCP HRNet you can get our prtrain model in : https://drive.google.com/file/d/1-EXl9dSatzmUSGpWGuBFlcPPM9T8Gcfr/view?usp=drivesdk
+
+For a purned model, there are two main file:
    ```
    pruneXXX.txt // to build model
    XXXXXXXX.pth // weight of model
