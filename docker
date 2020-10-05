@@ -1,0 +1,8 @@
+78a4c401d110
+docker start 78a4c401d110
+docker exec -it 78a4c401d110 /bin/bash
+python3 tools/test.py --cfg experiments/coco/hrnet/w48_384x288_adam_lr1e-3_pt78.yaml
+python3 tools/test.py --cfg experiments/coco/hrnet/w32_256x192_adam_lr1e-3.yaml
+python3 tools/purnednormal_regular_select.py --cfg experiments/coco/hrnet/w48_384x288_adam_lr1e-3_pt36.yaml
+pip3 install -i https://pypi.doubanio.com/simple/ torch==1.2.0 torchvision==0.4.0
+
