@@ -1,10 +1,4 @@
 # ------------------------------------------------------------------------------
-# Copyright (c) Microsoft
-# Licensed under the MIT License.
-# Written by Bin Xiao (Bin.Xiao@microsoft.com)
-# ------------------------------------------------------------------------------
-
-# ------------------------------------------------------------------------------
 # Copyright (c) CUMT
 # Licensed under the MIT License.
 # Written by Dongjingdian Liu (3357816826@qq.com)
