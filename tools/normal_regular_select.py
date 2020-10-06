@@ -4,6 +4,13 @@
 # Written by Bin Xiao (Bin.Xiao@microsoft.com)
 # ------------------------------------------------------------------------------
 
+# ------------------------------------------------------------------------------
+# Copyright (c) CUMT
+# Licensed under the MIT License.
+# Written by Dongjingdian Liu (3357816826@qq.com)
+# Time 2020.7.1
+# ------------------------------------------------------------------------------
+
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
