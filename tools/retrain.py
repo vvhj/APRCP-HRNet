@@ -1,7 +1,7 @@
 # ------------------------------------------------------------------------------
-# Copyright (c) Microsoft
+# Copyright (c) CUMT
 # Licensed under the MIT License.
-# Written by Bin Xiao (Bin.Xiao@microsoft.com)
+# Written by Dongjingdian Liu (3357816826@qq.com)
 # ------------------------------------------------------------------------------
 
 from __future__ import absolute_import
