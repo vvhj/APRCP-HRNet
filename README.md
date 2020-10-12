@@ -3,7 +3,7 @@ The paper is underwriter，and some further work will put out when the paper fin
 
 The newst result has reach none accuracy drop with 62.34% GFLOPs, the code will be updata recently. 
 
-![Illustrating the architecture of the proposed HRNet](/figures/hrnet.png)
+![Illustrating the architecture of the proposed HRNet](/figures/v1.png)
 ### Results on COCO val2017 with detector having human AP of 56.4 on COCO val2017 dataset
 | Arch               | Input size | #Params | GFLOPs |   ACC |    AP | Ap .5 | AP .75 |   AR   |
 |--------------------|------------|---------|--------|-------|-------|-------|--------|--------|
