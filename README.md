@@ -1,6 +1,8 @@
 # APRCP HRNet:  Adaptive Pruning Rate Channel Purning for HRNet Applied to 2D Human Pose Estimation \
 The paper is underwriter，and some further work will put out when the paper finished. These work is now part of mine undergraduate graduation design. 
 
+The newst result has reach none accuracy drop with 62.34% GFLOPs, the code will be updata recently. 
+
 ![Illustrating the architecture of the proposed HRNet](/figures/hrnet.png)
 ### Results on COCO val2017 with detector having human AP of 56.4 on COCO val2017 dataset
 | Arch               | Input size | #Params | GFLOPs |   ACC |    AP | Ap .5 | AP .75 |   AR   |
