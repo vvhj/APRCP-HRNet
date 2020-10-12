@@ -1,4 +1,4 @@
-# APRCP HRNet:  Adaptive Pruning Rate Channel Purning for HRNet Applied to 2D Human Pose Estimation \
+# APRCP HRNet:  Adaptive Pruning Rate Channel Purning for HRNet Applied to 2D Human Pose Estimation 
 The paper is underwriter，and some further work will put out when the paper finished. These work is now part of mine undergraduate graduation design. 
 
 The newst result has reach none accuracy drop with 62.34% GFLOPs, the code will be updata recently. 
@@ -70,7 +70,7 @@ The code is developed using python 3.6 on Centos7. NVIDIA GPUs are needed. The c
    └── requirements.txt
    ```
 
-7. Download pretrained models of original HRNet from our zoo([GoogleDrive](https://drive.google.com/drive/folders/1hOTihvbyIxsm5ygDpbUuJ7O_tzv4oXjC?usp=sharing) or [OneDrive](https://1drv.ms/f/s!AhIXJn_J-blW231MH2krnmLq5kkQ))
+7. Download pretrained models of original HRNet from ([GoogleDrive](https://drive.google.com/drive/folders/1hOTihvbyIxsm5ygDpbUuJ7O_tzv4oXjC?usp=sharing) or [OneDrive](https://1drv.ms/f/s!AhIXJn_J-blW231MH2krnmLq5kkQ))
    ```
    ${POSE_ROOT}
     `-- models
