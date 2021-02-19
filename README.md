@@ -1,3 +1,5 @@
+# New version code is underwriting. It will releas after testing on classify for Imagenet
+
 # APRCP HRNet:  Adaptive Pruning Rate Channel Purning for HRNet Applied to 2D Human Pose Estimation 
 The paper is underwriter，and some further work will put out when the paper finished. These work is now part of mine undergraduate graduation design. 
 
