@@ -40,7 +40,15 @@ from dataset import coco
 import dataset
 import models
 import json
+import heapq
 
+def minremainindex(lis,top=1,descending=True):
+    list1 = lis.clone().cpu().numpy().tolist()
+    if descending:
+        Index = list(map(list1.index,heapq.nlargest(top, list1)))
+    else:
+        Index = list(map(list1.index,heapq.nsmallest(top, list1)))
+    return Index
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Train keypoints network')
@@ -233,8 +241,12 @@ def getprunemodel(percent=0.6,index=0):
             weight_copy = m.weight.data.abs().clone()
             #weight_temp = weight_copy.gt(float(weight_copy.data.max)).float()
             mask = weight_copy.gt(thre).float().cuda()
-            if (int(torch.sum(mask))==0):
-                mask[weight_copy.argmax()] = 1
+            minchannels = int(weight_copy.size(0)*(1-percent)/4)
+            if (int(torch.sum(mask))<= minchannels):
+                index = minremainindex(weight_copy,minchannels)
+                for iii in index:
+                    mask[iii] = 1
+
             pruned = pruned + mask.shape[0] - max(int(torch.sum(mask)),1)
             m.weight.data.mul_(mask)
             m.bias.data.mul_(mask)
@@ -267,7 +279,7 @@ def getprunemodel(percent=0.6,index=0):
             testncfg.append(int(mask.shape[0]))
             print('layer index: {:d} \t total channel: {:d} \t remaining channel: {:d}'.format(k, mask.shape[0], int(torch.sum(mask))))
         elif isinstance(m,nn.MaxPool2d):
-            testncfg.append('M')
+            testcfg.append('M')
     if testncfg == ncfg:
         print("check step1 succesful")
     else:
@@ -275,7 +287,7 @@ def getprunemodel(percent=0.6,index=0):
     
     print("init newmodel weight:")
     num_parameters = sum([param.nelement() for param in newmodel.parameters()])
-    savepath = os.path.join(args.save, "prune"+str(int(percent*100))+".txt")
+    savepath = os.path.join(args.save, "prune.txt")
     with open(savepath, "w") as fp:
         fp.write("Configuration: \n"+str(testncfg)+"\n")
         fp.write("Number of parameters: \n"+str(num_parameters)+"\n")
@@ -343,7 +355,12 @@ def getprunemodel(percent=0.6,index=0):
                 print("Out shape {:d}".format(w1.shape[0]))
                 continue
             m1.weight.data = m0.weight.data.clone()
-    return newmodel
+    torch.save({'cfg': cfg,'ncfg':ncfg ,'state_dict': newmodel.state_dict()}, os.path.join(args.save, 'pruned'+'_pecnet'+str(percent)+'.pth.tar'))
+    #torch.save({'cfg': cfg ,'state_dict': oldmodel.state_dict()}, os.path.join(args.save, 'oldpruned.pth.tar'))
+    print('newmodelsaved')
+    print("testnewmodel:")
+    model = newmodel
+    return model
 def main():
     args = parse_args()
     update_config(cfg, args)
