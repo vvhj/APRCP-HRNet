@@ -13,7 +13,7 @@ The newst result has reach none accuracy drop with 58.2 Params.
 
 Some feature work is underwork. I will update and maintain in time, and welcome you to provide your own scheme for communication.
 
-![Illustrating the architecture of the proposed HRNet](/figures/v2.png)
+![Illustrating the architecture of the proposed HRNet](/figures/v2.PNG)
 ### Old Results on COCO val2017 with detector having human AP of 56.4 on COCO val2017 dataset 
 | Arch               | Input size | #Params | GFLOPs |   ACC |    AP | Ap .5 | AP .75 |   AR   |
 |--------------------|------------|---------|--------|-------|-------|-------|--------|--------|
