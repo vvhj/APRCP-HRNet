@@ -1,12 +1,20 @@
 # New version code is underwriting. It will releas after testing on classify for Imagenet
 
 # APRCP HRNet:  Adaptive Pruning Rate Channel Purning for HRNet Applied to 2D Human Pose Estimation 
-The paper is underwriter，and some further work will put out when the paper finished. These work is now part of mine undergraduate graduation design. 
+The paper is in draft review. I hope the article will be hired. 
 
-The newst result has reach none accuracy drop with 62.34% GFLOPs, the code will be updata recently. 
+I don't know if there are any risks in open source code before employment, but I have promised to update the new results so the new result is released. 
 
-![Illustrating the architecture of the proposed HRNet](/figures/v1.png)
-### Results on COCO val2017 with detector having human AP of 56.4 on COCO val2017 dataset
+I hope this work can help you and if you have any question or are interested in this direction you can join in the QQ group 767732179.
+
+I hope to learn and progress with you.
+
+The newst result has reach none accuracy drop with 58.2 Params.
+
+Some feature work is underwork. I will update and maintain in time, and welcome you to provide your own scheme for communication.
+
+![Illustrating the architecture of the proposed HRNet](/figures/v2.png)
+### Old Results on COCO val2017 with detector having human AP of 56.4 on COCO val2017 dataset 
 | Arch               | Input size | #Params | GFLOPs |   ACC |    AP | Ap .5 | AP .75 |   AR   |
 |--------------------|------------|---------|--------|-------|-------|-------|--------|--------|
 |   pose_hrnet_w32   |    256x192 | 28.5M   |    7.1 | 0.883 | 0.765 | 0.935 |  0.837 |  0.841 |
@@ -16,11 +24,34 @@ The newst result has reach none accuracy drop with 62.34% GFLOPs, the code will 
 |   **w32_extreme**  |    256x192 |  7.5M   |    2.2 | 0.863 | 0.732 | 0.926 |  0.813 |  0.809 |
 |   **w48_extreme**  |   384x288  | 18.8M   |    9.8 | 0.885 | 0.775 | 0.935 |  0.847 |  0.853 |
 
+### New Results on COCO val2017 with detector having human AP of 56.4 on COCO val2017 dataset
+|      Model    |Criterion| r  | APRP | Params(PR) | GFLOPS(PR) |  AP  | AP .5|AP .75| AP M | AP L |  AR  |
+|---------------|---------|----|------|------------|------------|------|------|------|------|------|------|
+|HRNet-W32      |   ——    | —— |  ——  |   28.5m    |    7.1     | 76.5 | 93.5 | 83.7 | 73.9 | 80.8 | 79.3 |
+|HRNet-W48      |   ——    | —— |  ——  |   63.6m    |    32.9    | 78.1 | 93.6 | 84.9 | 75.3 | 83.1 | 80.9 |
+|APRC-HRNet-W48 |   v1    |0.36|Simple|45.9m(27.8%)|21.0(36.1%) | 78.1 | 93.6 | 84.9 | 75.3 | 83.1 | 80.7 |
+|APRC-HRNet-W48 |   v1    |0.37|Golden|45.2m(28.9%)|21.0(36.1%) | 78.1 | 93.6 | 84.9 | 75.3 | 83.1 | 80.7 |
+|APRC-HRNet-W48 |   v2    |0.58|Simple|28.7m(54.9%)|17.3(47.3\%)| 78.1 | 93.5 | 84.8 | 74.8 | 83.1 | 80.9 |
+|APRC-HRNet-W48 |   v2    |0.61|Golden|26.6m(58.2%)|16.4(50.1\%)| 78.2 | 93.6 | 84.7 | 75.2 | 83.0 | 80.7 |
+|APRC-HRNet-W48 |   v1    |0.78|Manual|19.7m(69.0%)| 9.8(70.3\%)| 77.5 | 93.5 | 84.7 | 74.3 | 82.2 | 80.0 |
+|APRC-HRNet-W48 |   v2    |0.78|Manual|16.6m(73.9%)|11.7(64.5\%)| 77.7 | 93.5 | 84.7 | 74.5 | 82.2 | 80.2 |
+### New Results on COCO test2017 
+|      Model    |Criterion| r  | APRP | Params(PR) | GFLOPS(PR) |  AP  | AP .5|AP .75| AP M | AP L |  AR  |
+|---------------|---------|----|------|------------|------------|------|------|------|------|------|------|
+|HRNet-W32      |   ——    | —— |  ——  |   28.5m    |    7.1     | 74.9 | 92.5 | 82.8 | 71.3 | 80.9 | 80.1 |
+|HRNet-W48      |   ——    | —— |  ——  |   63.6m    |    32.9    | 75.5 | 92.5 | 83.3 | 71.9 | 81.5 | 80.5 |
+|APRC-HRNet-W48 |   v1    |0.36|Simple|45.9m(27.8%)|21.0(36.1%) | 75.2 | 92.5 | 83.0 | 71.6 | 81.2 | 80.4 |
+|APRC-HRNet-W48 |   v1    |0.37|Golden|45.2m(28.9%)|21.0(36.1%) | 75.2 | 92.5 | 83.1 | 71.5 | 81.4 | 80.3 |
+|APRC-HRNet-W48 |   v2    |0.58|Simple|28.7m(54.9%)|17.3(47.3\%)| 75.3 | 92.5 | 83.0 | 71.7 | 81.3 | 80.4 |
+|APRC-HRNet-W48 |   v2    |0.61|Golden|26.6m(58.2%)|16.4(50.1\%)| 75.3 | 92.5 | 83.3 | 71.7 | 81.2 | 80.4 |
+|APRC-HRNet-W48 |   v1    |0.78|Manual|19.7m(69.0%)| 9.8(70.3\%)| 74.6 | 92.4 | 82.4 | 71.0 | 80.6 | 79.8 |
+|APRC-HRNet-W48 |   v2    |0.78|Manual|16.6m(73.9%)|11.7(64.5\%)| 74.6 | 92.2 | 82.4 | 71.0 | 80.6 | 79.7 |
 ### Note:
 - Flip test is used.
 - Person detector has person AP of 56.4 on COCO val2017 dataset.
 - GFLOPs is for convolution and linear layers only.
-- _best is best purning rate of HRnet and _extreme is higher purning rate
+- _best is best purning rate of HRnet and _extreme is higher purning rate.
+- APRP is the selection mothed using to generate APR.
 
 ## Environment
 The code is developed using python 3.6 on Centos7. NVIDIA GPUs are needed. The code is developed and tested using 2 NVIDIA 2080Ti GPU cards. 
@@ -179,7 +210,13 @@ TEST:
 ```
 python3 tools/normal_regular_select \
     --cfg experiments/coco/hrnet/w48_384x288_adam_lr1e-3.yaml --save output\
+or use:
+python3 tools/golden_cut_select.py \
+    --cfg experiments/coco/hrnet/w48_384x288_adam_lr1e-3.yaml --save output\
 ```
+Note in line 138 : max_perf,max_acc = getpruneffects(0,"original")
+
+getpruneffects should be replaced by getpruneffects_v2 or getpruneffects_v3 if you want to use v2 or v3 pruning mothed.
 
 #### Retraining on COCO train2017 dataset
 
@@ -187,6 +224,23 @@ python3 tools/normal_regular_select \
 python3 tools/retrain.py \
     --cfg experiments/coco/hrnet/w48_384x288_adam_lr1e-3.yaml --save output --percent [you get in purning select or another float in range(0,1)] \
 ```
+or
+```
+python3 tools/retrain_v2.py \
+    --cfg experiments/coco/hrnet/w48_384x288_adam_lr1e-3.yaml --save output --percent [you get in purning select or another float in range(0,1)] \
+```
+or
+```
+python3 tools/retrain_v3.py \
+    --cfg experiments/coco/hrnet/w48_384x288_adam_lr1e-3.yaml --save output --percent [you get in purning select or another float in range(0,1)] \
+```
+#### test on COCO dataset
+Modifiy experiments\coco\hrnet\w48_384x288_adam_lr1e-3_pt36.yaml
+"MODEL_FILE" in  experiments\coco\hrnet\w48_384x288_adam_lr1e-3_pt36.yaml
+```
+python3 retraintest.py --ncfg [{scale or shift}{$r$}.txt]
+```
+([{scale or shift}{$r$}.txt] Corresponding to "MODEL_FILE" in  experiments\coco\hrnet\w48_384x288_adam_lr1e-3_pt36.yaml)
 
 ### Citation
 Thanks follower work:
