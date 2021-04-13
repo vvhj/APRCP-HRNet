@@ -9,7 +9,7 @@ I hope this work can help you and if you have any question or are interested in 
 
 I hope to learn and progress with you.
 
-The newst result has reach none accuracy drop with 58.2 Params.
+The newst result has reach none accuracy drop with 58.2% Params pruned.
 
 Some feature work is underwork. I will update and maintain in time, and welcome you to provide your own scheme for communication.
 
