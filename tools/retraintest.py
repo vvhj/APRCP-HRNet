@@ -1,10 +1,3 @@
-# ------------------------------------------------------------------------------
-# pose.pytorch
-# Copyright (c) 2018-present Microsoft
-# Licensed under The Apache-2.0 License [see LICENSE for details]
-# Written by Bin Xiao (Bin.Xiao@microsoft.com)
-# ------------------------------------------------------------------------------
-
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
@@ -37,7 +30,7 @@ def parse_args():
     # general
     parser.add_argument('--cfg',
                         help='experiment configure file name',
-                        required=True,
+                        default='experiments\coco\hrnet\w48_384x288_adam_lr1e-3_pt36.yaml',
                         type=str)
 
     parser.add_argument('opts',
@@ -61,6 +54,10 @@ def parse_args():
                         help='prev Model directory',
                         type=str,
                         default='')
+    parser.add_argument('--ncfg',
+                        help='ncfg path',
+                        type=str,
+                        default='testmodel/shift78.txt')
 
     args = parser.parse_args()
     return args
@@ -81,17 +78,22 @@ def main():
     torch.backends.cudnn.deterministic = cfg.CUDNN.DETERMINISTIC
     torch.backends.cudnn.enabled = cfg.CUDNN.ENABLED
 
-    ncfg = linecache.getline('tools/testmodel/prune36.txt',2)
+    ncfg = linecache.getline(args.ncfg,2)
     ncfg = ncfg.strip().strip("[]").split(",")
     for i in range(len(ncfg)):
         ncfg[i]=int(ncfg[i])
     from models.purnpose_hrnet import get_pose_net
-    model = get_pose_net(
-        cfg, ncfg,is_train=False
-    )
+    # model = get_pose_net(
+    #      cfg, ncfg,is_train=False
+    # )
 
+    model = eval('models.'+cfg.MODEL.NAME+'.get_pose_net')(
+        cfg, is_train=False
+    )
     if cfg.TEST.MODEL_FILE:
         logger.info('=> loading model from {}'.format(cfg.TEST.MODEL_FILE))
+        print("asas")
+        
         model.load_state_dict(torch.load(cfg.TEST.MODEL_FILE), strict=False)
     else:
         model_state_file = os.path.join(
