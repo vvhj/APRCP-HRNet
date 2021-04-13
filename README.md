@@ -15,7 +15,12 @@ Some feature work is underwork. I will update and maintain in time, and welcome 
 
 ![Illustrating the architecture of the proposed HRNet](/figures/v2.PNG)
 
+Fig1. the architecture of the proposed HRNet
+
 ![Illustrating the pruning area of the proposed HRNet](/figures/Prunarea.PNG)
+
+Fig2. the pruning area of the proposed HRNet
+
 ### Old Results on COCO val2017 with detector having human AP of 56.4 on COCO val2017 dataset 
 | Arch               | Input size | #Params | GFLOPs |   ACC |    AP | Ap .5 | AP .75 |   AR   |
 |--------------------|------------|---------|--------|-------|-------|-------|--------|--------|
